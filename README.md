@@ -35,12 +35,12 @@ num is variable name.
 by default decimal number is double in java.
 for char we use single quote.
 for Boolean use boolean, the default value for a boolean variable is indeed false.
-
+```
 float f = 5.5f; //declaring a float value.
 
 int i = 5,j = '5'; // ascii of 5 is 53.
 sout(i + j); //58
-
+```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 3) Literal :-> Fixed value directly written in your program (not a variable or expression)
 
@@ -55,15 +55,16 @@ when you cast an int to a byte in Java, and the value is outside the byte range 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 5) type promotion :->
-Type promotion in Java is the process where smaller data types are automatically converted to larger data types during arithmetic or expression evaluation to avoid data loss. for example: 
+Type promotion in Java is the process where smaller data types are automatically converted to larger data types during arithmetic or expression evaluation to avoid data loss. for example:
+```
 byte a = 10;
 byte b = 20;
 // byte c = a + b; ❌ Error
 int c = a + b; // ✅ Automatically promoted to int.
-
+```
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 6) operators :-> operators are special symbols used to perform operations on variables and values. Java supports several types of operators. types:-
-
+```
 	Arithmetic : +, -, *, /, %
 	Relational : ==, !=, >, <, >=, <=
 	Logical : &&, ||, !
@@ -72,7 +73,7 @@ int c = a + b; // ✅ Automatically promoted to int.
 	Bitwise : &
 	Ternary : ?:
 	instanceof : instanceof
-
+```
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 7) loops & conditional statement:->
 	for loop -> for(conditions){}             entry controlled loop.
@@ -120,10 +121,11 @@ ragged Array :- Array with constant row number but different column number....
 11) Enhanced For loop :->
 
 The for-each loop in Java (also called the enhanced for loop) is a simple and clean way to iterate through arrays or collections (like ArrayList, HashSet, etc.) without using an index.
+```
 ex:-	for (dataType variable : collection Or Array) {
     		// use variable (each element)
 	}
-
+```
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 12) Strings :->
 
@@ -154,12 +156,12 @@ How to Create Strings:- 1)String s1 = "Hello";   // stored in string pool.
 | `split(" ")`          | Splits into array                   | `"a b c".split(" ")` → `[a, b, c]`         |
 
 
-
+```
 String s1 = "Java";
 String s2 = new String("Java");
 System.out.println(s1 == s2);         // ❌ false checks address
 System.out.println(s1.equals(s2));    // ✅ true check equality
-
+```
 here, What is happening? s1 = "Java"; 👉 This uses a string literal. Java stores it in the String pool (shared area in memory). s2 = new String("Java"); 👉 This creates a new object in
  heap memory, even though the text is the same.
 
@@ -171,11 +173,11 @@ Java String is immutable — you cannot change it after it's created.To modify s
 													  2) StringBuilder → Faster, but not thread-safe....
 
 StringBuffer :- Thread-safe
-
+```
 StringBuffer sb = new StringBuffer("Hello");
 sb.append(" World");
 System.out.println(sb);  // Output: Hello World
-
+```
 -------------------------------------------------------------
 | Method                   | Description                    |
 | ------------------------ | ------------------------------ |
@@ -426,7 +428,7 @@ Unboxing:
 
   Abstract Class:-
 	An abstract class is a class that cannot be instantiated (you cannot create objects of it directly). It can have abstract methods (methods without a body) as well as concrete methods (methods with a body). It is meant to be extended by subclasses that provide implementations for its abstract methods.
-
+```
 example :-
 abstract class Animal {
     abstract void sound(); // abstract method
@@ -434,7 +436,7 @@ abstract class Animal {
         System.out.println("Eating...");
     }
 }
-
+```
 Abstract Method :-
 	An abstract method is a method that does not have a body — only its signature is declared. It must be overridden in a subclass. If a class has at least one abstract method, then the class must be declared abstract. 
 
@@ -451,7 +453,7 @@ remember we cannotmake outer class static...
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 30) Anonymous Inner Class :-> creating inner class at the time of object creation so that no class keyword and name is used !
-
+```
 // Anonymous Inner Class.
 
 public static void main(String[] args) {
@@ -467,6 +469,7 @@ class A{
         System.out.println("in Show");
     }
 }
+```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 31) Interface :-> It is 100% abstract by design (before Java 8) — it only contains abstract methods (method signatures without a body) and constants (public, static, final variables). we cannot create a interface object.
