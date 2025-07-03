@@ -479,6 +479,7 @@ class A{
 	From Java 9, interfaces can also have private methods.
 	we can extend two interfaces or inheritance is possible here.
 
+```
 interface Animal {
     void eat(); // abstract method
     void sleep();
