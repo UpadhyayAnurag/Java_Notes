@@ -10,7 +10,7 @@ JRE(Java Runtime Environment) consists of JVM(Java Virtual Machine) + Other Libr
 												                                                                        
 JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.
 
-	or we can say, 
+	```or we can say, ```
 
 JVM = the engine that runs Java bytecode.							                                        
 												                                                                        
@@ -493,7 +493,7 @@ class Dog implements Animal {
         System.out.println("Dog sleeps");
     }
 }
-
+```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
