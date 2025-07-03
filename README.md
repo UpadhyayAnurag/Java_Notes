@@ -64,7 +64,7 @@ int c = a + b; // ✅ Automatically promoted to int.
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 6) operators :-> operators are special symbols used to perform operations on variables and values. Java supports several types of operators. types:-
-```
+
 	Arithmetic : +, -, *, /, %
 	Relational : ==, !=, >, <, >=, <=
 	Logical : &&, ||, !
@@ -73,7 +73,7 @@ int c = a + b; // ✅ Automatically promoted to int.
 	Bitwise : &
 	Ternary : ?:
 	instanceof : instanceof
-```
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 7) loops & conditional statement:->
 	for loop -> for(conditions){}             entry controlled loop.
@@ -103,7 +103,9 @@ Method overloading :-> Method Overloading in Java is a form of compile‑time (o
 Types of arrays :-
 
 Linear array :- Normal Array....
+
 2D Array :- Array having both rows and column....
+
 ragged Array :- Array with constant row number but different column number....
 
 | Feature         | Description                               |
