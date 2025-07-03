@@ -1,0 +1,428 @@
+                                                                            -------------------------  
+                                                                            | Basics Of Core Java ! |
+                                                                            -------------------------
+
+1) running of java code:->
+
+first we write java code(.java), the compliers compiles or convert the java code into byte code(.class) because JVM understands only the byte code and then the execution starts with the main function.
+-------------------------------------------------------------------------------------------------
+|JRE(Java Runtime Environment) consists of JVM(Java Virtual Machine) + Other Libraries.         |
+|												                                                                        |
+|JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.					                          |
+|												                                                                        |		
+|			or  									                                                                    |
+|												                                                                        |
+|JVM = the engine that runs Java bytecode.							                                        |
+|												                                                                        |
+|JRE = JVM + standard libraries → what you need to run Java programs.				                    |
+|												                                                                        |
+|JDK = JRE + compilers and tools → what you need to write, compile, and package Java programs.	|
+-------------------------------------------------------------------------------------------------
+
+Java is a strictly typed (or strongly typed) language. because:-Every variable and expression has a defined type. You cannot use a variable without declaring its type. The compiler checks all types at compile time. You cannot mix incompatible types without explicit type casting.
+
+when the main method is not found in a Java program, the application cannot start its execution, resulting in a runtime error.
+
+Java is a object oriented programming.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2) variables:->
+
+int num = 5;
+here int is datatype.
+num is variable name.
+5 is value of the variable.
+
+by default decimal number is double in java.
+for char we use single quote.
+for Boolean use boolean, the default value for a boolean variable is indeed false.
+
+float f = 5.5f; //declaring a float value.
+
+int i = 5,j = '5'; // ascii of 5 is 53.
+sout(i + j); //58
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3) Literal :-> Fixed value directly written in your program (not a variable or expression)
+
+in java 2.5e2 means 2.5 × 10²,e2 refers to 10 power 2.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4) type conversion :->
+smaller datatype can easily converted to bigger by the compiler. but to convert bigger to smaller we need to convert, example: int x = (int)5.6;
+here 5.6 is float but it is converted to int (5) and stress in x.
+
+when you cast an int to a byte in Java, and the value is outside the byte range (-128 to 127), it behaves like a modulo operation with 256.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5) type promotion :->
+Type promotion in Java is the process where smaller data types are automatically converted to larger data types during arithmetic or expression evaluation to avoid data loss. for example: 
+byte a = 10;
+byte b = 20;
+// byte c = a + b; ❌ Error
+int c = a + b; // ✅ Automatically promoted to int.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6) operators :-> operators are special symbols used to perform operations on variables and values. Java supports several types of operators. types:-
+
+	Arithmetic : +, -, *, /, %
+	Relational : ==, !=, >, <, >=, <=
+	Logical : &&, ||, !
+	Assignment : =, +=, -=, *=, /=, %=
+	Unary : +, -, ++, --, !
+	Bitwise : &
+	Ternary : ?:
+	instanceof : instanceof
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7) loops & conditional statement:->
+	for loop -> for(conditions){}             entry controlled loop.
+	while loop -> while(condition){}          entry controlled loop.
+	do-while loop -> do{}while(condition);    exit controlled loop, it will run minimum one time because the condition is checked at the last.
+conditional statement : if-else; if else-if else.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8) class and object :->
+
+class : A class is a blueprint or template for creating objects. It defines properties (variables) and behaviors (methods). it Doesn't occupy memory when declared it defines structure.
+
+Objects : An object is an instance of a class. It represents real-world entities. An object is created using the new keyword. Each object has its own copy of class variables and can call class methods.
+
+The main() method is static, so it belongs to the class itself, not to any object. Because of that, the JVM can directly run main() without creating an object.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9) Methods :-> A method in Java is a block of code that performs a specific task, encapsulated under a name, and belonging to a class (or interface).
+
+Method overloading :-> Method Overloading in Java is a form of compile‑time (or static) polymorphism where you can have multiple methods in the same class with The same name Different parameter
+ lists (different in number, type, or order of parameters),The return type may be the same or different, but return type alone cannot distinguish overloaded methods.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10) Arrays :-> an array is a container object that holds a fixed‐number of values of a single type. each identified by an integer index, all storing the same kind of item.
+
+Types of arrays :-
+
+Linear array :- Normal Array....
+2D Array :- Array having both rows and column....
+ragged Array :- Array with constant row number but different column number....
+
+-----------------------------------------------------------
+| Feature         | Description                           |
+-----------------------------------------------------------
+| Fixed size      |Array size cannot change after creation|
+| Same data type  | All elements must be of same type     |
+| Indexing        | Starts from 0                         |
+| Stored in       | Heap memory                           |
+| Access elements | Using array[index]                    |
+-----------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11) Enhanced For loop :->
+
+The for-each loop in Java (also called the enhanced for loop) is a simple and clean way to iterate through arrays or collections (like ArrayList, HashSet, etc.) without using an index.
+ex:-	for (dataType variable : collection Or Array) {
+    		// use variable (each element)
+	}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12) Strings :->
+
+In Java, String is a built-in class (not a primitive type) that represents a sequence of characters. Strings are immutable (unchangeable once created) and are used to store and manipulate text.
+How to Create Strings:- 1)String s1 = "Hello";   // stored in string pool.
+			2)String s2 = new String("Hello");   // creates a new object in heap.
+
+------------------------------------------------------------------------------------------------
+| Type of comparison  |Operator / Method| What it checks                                       |
+|---------------------|-----------------|------------------------------------------------------|
+| Reference comparison| ==              | Do both variables point to the same memory location? |
+| Content comparison  | .equals()       | Do both variables have the same characters/text?     |
+------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+| Method                | What it does                        | Example                                  |
+----------------------------------------------------------------------------------------------------------
+| length()              | Returns number of characters        | "hello".length() → 5                     |
+| charAt(int index)     | Gets character at index             | "cat".charAt(0) → 'c'                    |
+| toUpperCase()         | Converts to uppercase               | "hi".toUpperCase() → "HI"                |
+| toLowerCase()         | Converts to lowercase               | "HI".toLowerCase() → "hi"                |
+| substring(int start)  | Gets part of string                 | "hello".substring(1) → "ello"            |
+| substring(a, b)       | From index a to b-1                 | "hello".substring(1, 4) → "ell"          |
+| equals(str)           | Compares strings (case-sensitive)   | "Hi".equals("hi") → false                |
+| equalsIgnoreCase(str) | Compares strings (case-insensitive) | "Hi".equalsIgnoreCase("hi") → true       |
+| contains(str)         | Checks if a string is inside        | "apple".contains("pp") → true            |
+| replace(a, b)         | Replaces one char/word with another | "hi hi".replace("hi", "bye") → "bye bye" |
+| trim()                | Removes spaces from both ends       | "  hi  ".trim() → "hi"                   |
+| split(" ")            | Splits into array                   | "a b c".split(" ") → [a, b, c]           |
+----------------------------------------------------------------------------------------------------------
+
+String s1 = "Java";
+String s2 = new String("Java");
+System.out.println(s1 == s2);         // ❌ false checks address
+System.out.println(s1.equals(s2));    // ✅ true check equality
+
+here, What is happening? s1 = "Java"; 👉 This uses a string literal. Java stores it in the String pool (shared area in memory). s2 = new String("Java"); 👉 This creates a new object in
+ heap memory, even though the text is the same.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13) String builder & string buffer:->
+
+Java String is immutable — you cannot change it after it's created.To modify strings efficiently, we use: 1) StringBuffer → Thread-safe (used in multi-threaded programs)....
+													  2) StringBuilder → Faster, but not thread-safe....
+
+StringBuffer :- Thread-safe
+
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb);  // Output: Hello World
+
+-------------------------------------------------------------
+| Method                   | Description                    |
+| ------------------------ | ------------------------------ |
+| append(String)           | Adds text at the end           |
+| insert(index, text)      | Inserts text at given position |
+| replace(start, end, str) | Replaces part of text          |
+| delete(start, end)       | Deletes part of text           |
+| reverse()                | Reverses the string            |
+| length()                 | Returns length                 |
+-------------------------------------------------------------
+
+StringBuilder :- Faster, but not thread-safe
+
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" Java");
+System.out.println(sb);  // Hello Java
+
+✅ All methods are same as StringBuffer (append, insert, delete, etc.)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14) Static :-> Belongs to a class not to a object....
+
+if you make something static, it means- There is only one copy, shared by all objects. You can access it without creating an object. Access static members using class name...
+
+we can use a static variable inside static method but can not use non static variables inside static method...
+
+A static block in Java is a special block of code that runs only once, when the class is loaded into memory. It starts with the keyword static. Runs before the main() method. 
+Used for initializing static variables or code that must run once. 
+--------------------------------------------------------------
+| Term              | Meaning                                |
+|-------------------|----------------------------------------|
+| Class is loaded   | JVM brings the .class file into memory |
+| Static block runs | Automatically after class is loaded    |
+| Main runs         | After static block, main() starts      |
+--------------------------------------------------------------
+
+When you run a Java program (following things takes place):-
+
+Class Loading :-
+	The .class file (like Demo.class) is loaded into RAM by a part of the JVM called the Class Loader.
+Static Block Runs (if any) :-
+	As soon as the class is loaded, all static blocks run once (before main() or any object is created).
+Main Method Starts :-
+	After loading and static initialization, the JVM calls the main() method to start execution.
+----------------------------------------------------------------------
+| Part                       | Meaning                               |
+| -------------------------- | ------------------------------------- |
+| Class.forName("MyClass")   | Loads MyClass into memory             |
+| Returns                    | A Class object that describes MyClass |
+| Use                        | Useful in reflection, dynamic loading |
+----------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15) Encapsulation :-> Encapsulation is a fundamental concept in object-oriented programming (OOP) in Java. It involves hiding the internal details of an object and exposing only the
+ necessary parts to the outside world. This is achieved by:
+	• Declaring the class variables as private, which makes them accessible only within the	class.
+	• Providing public methods (getters and setters) to access and modify these private variables.
+getter: example - public String getName() {
+        		return name;
+    		  }
+setter : example - public void setName(String name) {
+        		this.name = name;
+    		   }
+here,this keyword refers to the current object of the class....
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16) Constructor :-> A constructor in Java is a special method that is automatically called when you create an object of a class. It is used to initialize the object — 
+i.e., give values to the object’s variables when it's created.
+------------------------------------------------------------------------------------------------
+| Type                               | Description                                             |
+| ---------------------------------- | ------------------------------------------------------- |
+| 1. Default constructor             | No parameters, sets default values                      |
+| 2. Parameterized constructor       | Takes arguments to set custom values                    |
+| 3. Copy constructor (not built-in) | Used to copy another object's values (manually written) |
+------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17) Naming Conventions in Java :-> 
+-------------------------------------------------
+| Item        | Convention | Example            |
+| ----------- | -----------| -------------------|
+| Class       | PascalCase | EmployeeDetails    |
+| Method      | camelCase  | calculateSalary()  |
+| Variable    | camelCase  | totalMarks         |
+| Constant    | UPPER_CASE | PI, MAX_VALUE      |
+| Package     | lowercase  | com.myproject.demo |
+| Interface   | PascalCase | Runnable           |
+| Constructor | PascalCase | Student()          |
+-------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18) Anonymous Object in Java :-> An anonymous object in Java is an object that is created without assigning it a name (reference variable). it can be used only once....
+Syntax :-  new ClassName().methodName();
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19) Inheritence :-> Inheritance in Java means one class can use (or inherit) the properties and methods of another class. 
+
+class Parent {
+    // parent class (superclass)
+}
+
+class Child extends Parent {
+    // child class (subclass) inherits from parent
+}
+--------------------------------------------------------------------------------------------------------------
+| Type                           | Supported in Java?                   | Example                            |
+| ------------------------------ | -------------------------------------| -----------------------------------|
+| Single Inheritance             |    Yes                               | One child inherits one parent      |
+| Multilevel Inheritance         |    Yes                               | Child → Parent → Grandparent       |
+| Hierarchical                   |    Yes                               | Multiple classes inherit one parent|
+| Multiple Inheritance (classes) |    No (but possible using interfaces)| -                                  |
+--------------------------------------------------------------------------------------------------------------
+java does not support multiple inheritence.....
+
+-------------------------------------------------------------------------------------------
+|Keyword| Refers To           | Common Use Cases                                          |
+|-------| ------------------- | --------------------------------------------------------- |
+| this()| Current class       | Access current object fields, call same class constructor |
+|super()| Parent (superclass) | Call parent constructor, access parent method/variable    |
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20) Method Overriding :-> Method Overriding in Java means defining a method in a child class with the same name, return type, and parameters as in its parent class — 
+so that the child class version gets called instead of the parent version.... 
+
+In inheritance jo method refrence main hoga uska method dekha jaiga aur jo overridden hoga wo bs baki main compilation error aa jaega....
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+21) Packages :-> A package in Java is a group of related classes and interfaces. Think of it as a folder on your computer that organizes files (Java classes) neatly.
+
+Types of Packages:
+	Built-in packages (from Java itself)
+	User-defined packages (created by you)
+
+Built-in packages:
+-------------------------------------------------------------------
+| Package   | Use                                                 |
+|-----------|---------------------------------------------------- |
+| java.lang | Core classes (String, Math, System) — auto imported |
+| java.util | Utility classes like ArrayList, Date, Scanner       |
+| java.io   | Input/Output classes like File, BufferedReader      |
+| java.sql  | Database connectivity                               |
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22) Access Modifiers :-> Access Modifiers in Java are keywords used to set the accessibility (visibility) of classes, constructors, methods, and variables...
+-----------------------------------------------------
+|Modifier |Class |Package |Subclass |Outside Package|
+|---------|------|--------|---------|---------------|
+|public   |✔     |✔      | ✔       |✔             |
+|protected|✔     |✔      | ✔       |✘             |
+|default  |✔     |✔      | ✘       |✘             |
+|private  |✔     |✘      | ✘       |✘             |
+-----------------------------------------------------
+public:
+	Access Level: Everywhere (within the same class, package, subclass, and outside package).
+	Keyword: public
+	Use Case: When you want your method/class to be accessible from anywhere.
+
+Protected:
+	Access Level: Within the same package and subclasses (even if they are in different packages).
+	Keyword: protected
+	Use Case: When you want to allow access to subclasses and same package but restrict it from other packages.
+
+Default (Package-Private):
+	Access Level: Only within the same package.
+	Keyword: No modifier (just omit the access keyword)
+	Use Case: When you want to restrict access to classes in the same package only.
+
+private:
+	Access Level: Only within the same class.
+	Keyword: private
+	Use Case: For internal data hiding, to enforce encapsulation.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23) Polymorphism :-> Polymorphism means “many forms”. In Java, it allows a single action to behave differently based on the object that is invoking it. 
+It is one of the core principles of Object-Oriented Programming (OOP)..
+It has 2 types:
+	----------------------------------------------------------------------------------
+	| Type                      | Description      | Implemented By                  |
+	|---------------------------|------------------| --------------------------------|
+	| Compile-time Polymorphism |Method Overloading| Within the same class           |
+	| Runtime Polymorphism      |Method Overriding | Between parent and child classes|
+	----------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+24) Final Keyword :-> 
+----------------------------------------------------------------------------
+| `final` in Java  | Real Life Equivalent                                  |
+| ---------------- | ----------------------------------------------------- |
+| `final` variable | A **PIN code**: cannot be changed after set           |means variable value cannot be changed. used for constants...
+| `final` method   | A **sealed company policy**: no modifications         |means method cannot be overridden. prevent overriding...
+| `final` class    | A **sealed product**: no further additions or changes |means class cannot be extended, prevent inheritance...
+----------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+25) toString() :-> it gives output as Classname@hashcode which is equal to if we print the object we made for any class . although we can override it to print anything we want...
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+26) upcasting and downcasting :-> Upcasting means assigning a child class object to a parent class reference. Downcasting means assigning a parent class reference back to a child class reference.
+--------------------------------------------------------------------------
+| Feature   | Upcasting                 | Downcasting                    |
+| --------- | ------------------------- | ------------------------------ |
+| Direction | Child → Parent            | Parent → Child                 |
+| Syntax    | `Parent p = new Child();` | `Child c = (Child) parentRef;` |
+| Type      | Implicit (Automatic)      | Explicit (Manual)              |
+| Safe?     | Yes                       |    Risky (must be checked)     |
+| Use Case  | Polymorphism              | Access child-specific features |
+--------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+27) Wrapper Classes :-> In Java, wrapper classes are used to convert primitive data types into objects... 
+
+-------------------------------------------------------------------------------
+| Wrapper Class | Method Example                 | Description                |
+| ------------- | ------------------------------ | -------------------------- |
+| `Integer`     | `Integer.parseInt("123")`      | Converts String to int     |
+| `Double`      | `Double.parseDouble("2.3")`    | Converts String to double  |
+| `Boolean`     | `Boolean.parseBoolean("true")` | Converts String to boolean |
+-------------------------------------------------------------------------------
+
+boxing : converting primitive value to object by wrapper class.. it is of 2 types:- Autoboxing and Unboxing.
+
+Autoboxing:
+	Automatically converts primitive → object 
+	int a = 10;
+	Integer obj = a;
+
+Unboxing:
+	Automatically converts object → primitive
+	Integer obj = 10;
+	int a = obj;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+									                                                           ---------------------------					
+-----------------------------------------------------------------------------|basic core Java Ends Here|------------------------------------------------------------------------------------
+                                                                             ---------------------------
