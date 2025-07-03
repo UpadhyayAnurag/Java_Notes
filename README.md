@@ -10,7 +10,7 @@ JRE(Java Runtime Environment) consists of JVM(Java Virtual Machine) + Other Libr
 												                                                                        
 JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.
 
-	```or we can say, ```
+	or we can say, 
 
 JVM = the engine that runs Java bytecode.							                                        
 												                                                                        
@@ -190,11 +190,11 @@ System.out.println(sb);  // Output: Hello World
 -------------------------------------------------------------
 
 StringBuilder :- Faster, but not thread-safe
-
+```
 StringBuilder sb = new StringBuilder("Hello");
 sb.append(" Java");
 System.out.println(sb);  // Hello Java
-
+```
 ✅ All methods are same as StringBuffer (append, insert, delete, etc.)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -216,13 +216,14 @@ Used for initializing static variables or code that must run once.
 --------------------------------------------------------------
 
 When you run a Java program (following things takes place):-
-
+```
 Class Loading :-
 	The .class file (like Demo.class) is loaded into RAM by a part of the JVM called the Class Loader.
 Static Block Runs (if any) :-
 	As soon as the class is loaded, all static blocks run once (before main() or any object is created).
 Main Method Starts :-
 	After loading and static initialization, the JVM calls the main() method to start execution.
+```
 ----------------------------------------------------------------------
 | Part                       | Meaning                               |
 | -------------------------- | ------------------------------------- |
@@ -234,9 +235,9 @@ Main Method Starts :-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 15) Encapsulation :-> Encapsulation is a fundamental concept in object-oriented programming (OOP) in Java. It involves hiding the internal details of an object and exposing only the
- necessary parts to the outside world. This is achieved by:
+ necessary parts to the outside world. ```This is achieved by:
 	• Declaring the class variables as private, which makes them accessible only within the	class.
-	• Providing public methods (getters and setters) to access and modify these private variables.
+	• Providing public methods (getters and setters) to access and modify these private variables.```
 getter: example - public String getName() {
         		return name;
     		  }
