@@ -1,6 +1,6 @@
-                                                                            -------------------------  
-                                                                            | Basics Of Core Java ! |
-                                                                            -------------------------
+-------------------------
+| Basics Of Core Java ! |
+-------------------------
 
 1) running of java code:->
 
@@ -8,10 +8,10 @@ first we write java code(.java), the compliers compiles or convert the java code
 
 JRE(Java Runtime Environment) consists of JVM(Java Virtual Machine) + Other Libraries.         
 												                                                                        
-JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.					                          
-												                                                                    		
-			or  									                                                                    
-												                                                                        
+JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.
+
+	or we can say, 
+
 JVM = the engine that runs Java bytecode.							                                        
 												                                                                        
 JRE = JVM + standard libraries → what you need to run Java programs.				                    
