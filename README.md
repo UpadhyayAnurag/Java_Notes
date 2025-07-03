@@ -65,14 +65,17 @@ int c = a + b; // ✅ Automatically promoted to int.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 6) operators :-> operators are special symbols used to perform operations on variables and values. Java supports several types of operators. types:-
 
-	Arithmetic : +, -, *, /, %
-	Relational : ==, !=, >, <, >=, <=
-	Logical : &&, ||, !
-	Assignment : =, +=, -=, *=, /=, %=
-	Unary : +, -, ++, --, !
-	Bitwise : &
-	Ternary : ?:
-	instanceof : instanceof
+| Category      | Operators                          |
+|---------------|------------------------------------|
+| Arithmetic    | `+`, `-`, `*`, `/`, `%`            |
+| Relational    | `==`, `!=`, `>`, `<`, `>=`, `<=`   |
+| Logical       | `&&`, `||`, `!`                    |
+| Assignment    | `=`, `+=`, `-=`, `*=`, `/=`, `%=`  |
+| Unary         | `+`, `-`, `++`, `--`, `!`          |
+| Bitwise       | `&`                                |
+| Ternary       | `?:`                               |
+| Type Checking | `instanceof`                      |
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 7) loops & conditional statement:->
