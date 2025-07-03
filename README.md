@@ -421,7 +421,80 @@ Unboxing:
 	Integer obj = 10;
 	int a = obj;
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-									                                                           ---------------------------					
------------------------------------------------------------------------------|basic core Java Ends Here|------------------------------------------------------------------------------------
-                                                                             ---------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+28) Abstract Keyword :-> The abstract keyword in Java is used to declare abstract classes and abstract methods.
+
+  Abstract Class:-
+	An abstract class is a class that cannot be instantiated (you cannot create objects of it directly). It can have abstract methods (methods without a body) as well as concrete methods (methods with a body). It is meant to be extended by subclasses that provide implementations for its abstract methods.
+
+example :-
+abstract class Animal {
+    abstract void sound(); // abstract method
+    void eat() {  // concrete method
+        System.out.println("Eating...");
+    }
+}
+
+Abstract Method :-
+	An abstract method is a method that does not have a body — only its signature is declared. It must be overridden in a subclass. If a class has at least one abstract method, then the class must be declared abstract. 
+
+Cannot instantiate an abstract class, very important means we cannot make direct object of the abstract class !!.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+29) Inner Class :-> An Inner Class in Java is a class defined inside another class. 
+ you create an inner class object with OuterClas.InnerClass obj = outerClassObject.new InnerClass();
+if we make inner class static then to create inner class object we use: OuterClas.InnerClass obj = new OuterClass.InnerClass();
+
+remember we cannotmake outer class static...
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+30) Anonymous Inner Class :-> creating inner class at the time of object creation so that no class keyword and name is used !
+
+// Anonymous Inner Class.
+
+public static void main(String[] args) {
+     A obj = new A(){// Declared at the time of making object...
+     	public void show(){
+         	System.out.println("In Show 2.");
+     	}
+     };
+     obj . show();
+}
+class A{
+    public void show(){
+        System.out.println("in Show");
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+31) Interface :-> It is 100% abstract by design (before Java 8) — it only contains abstract methods (method signatures without a body) and constants (public, static, final variables). we cannot create a interface object.
+
+	Methods in an interface are public and abstract by default.
+	Fields are public, static, and final by default.
+	A class implements an interface using the implements keyword.
+	A class can implement multiple interfaces — this achieves multiple inheritance in Java.
+	From Java 8, interfaces can have default and static methods with a body.
+	From Java 9, interfaces can also have private methods.
+	we can extend two interfaces or inheritance is possible here.
+
+interface Animal {
+    void eat(); // abstract method
+    void sleep();
+}
+
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eats bones");
+    }
+    public void sleep() {
+        System.out.println("Dog sleeps");
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+32) Enum:-> An enum (enumeration) in Java is a special type that represents a group of named constants (fixed set of values).
+
