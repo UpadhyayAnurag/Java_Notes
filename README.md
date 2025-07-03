@@ -5,19 +5,18 @@
 1) running of java code:->
 
 first we write java code(.java), the compliers compiles or convert the java code into byte code(.class) because JVM understands only the byte code and then the execution starts with the main function.
--------------------------------------------------------------------------------------------------
-|JRE(Java Runtime Environment) consists of JVM(Java Virtual Machine) + Other Libraries.         |
-|												                                                                        |
-|JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.					                          |
-|												                                                                        |		
-|			or  									                                                                    |
-|												                                                                        |
-|JVM = the engine that runs Java bytecode.							                                        |
-|												                                                                        |
-|JRE = JVM + standard libraries → what you need to run Java programs.				                    |
-|												                                                                        |
-|JDK = JRE + compilers and tools → what you need to write, compile, and package Java programs.	|
--------------------------------------------------------------------------------------------------
+
+JRE(Java Runtime Environment) consists of JVM(Java Virtual Machine) + Other Libraries.         
+												                                                                        
+JDK(Java Development Kit) has JRE. JRE has JVM & Libraries.					                          
+												                                                                    		
+			or  									                                                                    
+												                                                                        
+JVM = the engine that runs Java bytecode.							                                        
+												                                                                        
+JRE = JVM + standard libraries → what you need to run Java programs.				                    
+												                                                                        
+JDK = JRE + compilers and tools → what you need to write, compile, and package Java programs.	
 
 Java is a strictly typed (or strongly typed) language. because:-Every variable and expression has a defined type. You cannot use a variable without declaring its type. The compiler checks all types at compile time. You cannot mix incompatible types without explicit type casting.
 
@@ -106,15 +105,16 @@ Linear array :- Normal Array....
 2D Array :- Array having both rows and column....
 ragged Array :- Array with constant row number but different column number....
 
------------------------------------------------------------
-| Feature         | Description                           |
------------------------------------------------------------
-| Fixed size      |Array size cannot change after creation|
-| Same data type  | All elements must be of same type     |
-| Indexing        | Starts from 0                         |
-| Stored in       | Heap memory                           |
-| Access elements | Using array[index]                    |
------------------------------------------------------------
++-----------------+-------------------------------------------+
+| Feature         | Description                               |
++-----------------+-------------------------------------------+
+| Fixed Size      | Array size cannot change after creation   |
+| Same Data Type  | All elements must be of same type         |
+| Indexing        | Starts from 0                             |
+| Stored In       | Heap memory                               |
+| Access Elements | Using array[index]                        |
++-----------------+-------------------------------------------+
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -132,29 +132,31 @@ In Java, String is a built-in class (not a primitive type) that represents a seq
 How to Create Strings:- 1)String s1 = "Hello";   // stored in string pool.
 			2)String s2 = new String("Hello");   // creates a new object in heap.
 
-------------------------------------------------------------------------------------------------
-| Type of comparison  |Operator / Method| What it checks                                       |
-|---------------------|-----------------|------------------------------------------------------|
-| Reference comparison| ==              | Do both variables point to the same memory location? |
-| Content comparison  | .equals()       | Do both variables have the same characters/text?     |
-------------------------------------------------------------------------------------------------
++-----------------------+-----------------+------------------------------------------------------+
+| Type of Comparison    | Operator/Method | What it Checks                                       |
++-----------------------+-----------------+------------------------------------------------------+
+| Reference Comparison  | ==              | Do both variables point to the same memory location? |
+| Content Comparison    | .equals()       | Do both variables have the same characters/text?     |
++-----------------------+-----------------+------------------------------------------------------+
 
-----------------------------------------------------------------------------------------------------------
-| Method                | What it does                        | Example                                  |
-----------------------------------------------------------------------------------------------------------
-| length()              | Returns number of characters        | "hello".length() → 5                     |
-| charAt(int index)     | Gets character at index             | "cat".charAt(0) → 'c'                    |
-| toUpperCase()         | Converts to uppercase               | "hi".toUpperCase() → "HI"                |
-| toLowerCase()         | Converts to lowercase               | "HI".toLowerCase() → "hi"                |
-| substring(int start)  | Gets part of string                 | "hello".substring(1) → "ello"            |
-| substring(a, b)       | From index a to b-1                 | "hello".substring(1, 4) → "ell"          |
-| equals(str)           | Compares strings (case-sensitive)   | "Hi".equals("hi") → false                |
-| equalsIgnoreCase(str) | Compares strings (case-insensitive) | "Hi".equalsIgnoreCase("hi") → true       |
-| contains(str)         | Checks if a string is inside        | "apple".contains("pp") → true            |
-| replace(a, b)         | Replaces one char/word with another | "hi hi".replace("hi", "bye") → "bye bye" |
-| trim()                | Removes spaces from both ends       | "  hi  ".trim() → "hi"                   |
-| split(" ")            | Splits into array                   | "a b c".split(" ") → [a, b, c]           |
-----------------------------------------------------------------------------------------------------------
+
++------------------------+-------------------------------------+--------------------------------------------+
+| Method                 | What it Does                        | Example                                    |
++------------------------+-------------------------------------+--------------------------------------------+
+| length()               | Returns number of characters        | "hello".length() → 5                       |
+| charAt(int index)      | Gets character at index             | "cat".charAt(0) → 'c'                      |
+| toUpperCase()          | Converts to uppercase               | "hi".toUpperCase() → "HI"                  |
+| toLowerCase()          | Converts to lowercase               | "HI".toLowerCase() → "hi"                  |
+| substring(int start)   | Gets part of string                 | "hello".substring(1) → "ello"              |
+| substring(a, b)        | From index a to b-1                 | "hello".substring(1, 4) → "ell"            |
+| equals(str)            | Compares strings (case-sensitive)   | "Hi".equals("hi") → false                  |
+| equalsIgnoreCase(str)  | Compares strings (case-insensitive) | "Hi".equalsIgnoreCase("hi") → true         |
+| contains(str)          | Checks if a string is inside        | "apple".contains("pp") → true              |
+| replace(a, b)          | Replaces one char/word with another | "hi hi".replace("hi", "bye") → "bye bye"   |
+| trim()                 | Removes spaces from both ends       | "  hi  ".trim() → "hi"                     |
+| split(" ")             | Splits into array                   | "a b c".split(" ") → [a, b, c]             |
++------------------------+-------------------------------------+--------------------------------------------+
+
 
 String s1 = "Java";
 String s2 = new String("Java");
