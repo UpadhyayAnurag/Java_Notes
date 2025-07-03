@@ -235,15 +235,19 @@ Main Method Starts :-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 15) Encapsulation :-> Encapsulation is a fundamental concept in object-oriented programming (OOP) in Java. It involves hiding the internal details of an object and exposing only the
- necessary parts to the outside world. ```This is achieved by:
+necessary parts to the outside world.
+
+This is achieved by:
 	• Declaring the class variables as private, which makes them accessible only within the	class.
-	• Providing public methods (getters and setters) to access and modify these private variables.```
+	• Providing public methods (getters and setters) to access and modify these private variables.
+```
 getter: example - public String getName() {
         		return name;
     		  }
 setter : example - public void setName(String name) {
         		this.name = name;
     		   }
+```
 here,this keyword refers to the current object of the class....
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
