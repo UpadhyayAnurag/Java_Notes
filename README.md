@@ -523,14 +523,14 @@ we can use if-else and switch here. Enums implicitly extend java.lang.Enum class
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-6) Annotation :-> Annotations are a form of metadata — they provide information about your code, but do not change how the code runs directly. Think of them as tags or markers you attach to classes, methods, variables, etc. to instruct the compiler or frameworks/tools to do something special.
+33) Annotation :-> Annotations are a form of metadata — they provide information about your code, but do not change how the code runs directly. Think of them as tags or markers you attach to classes, methods, variables, etc. to instruct the compiler or frameworks/tools to do something special.
 ```
 Some annotations are only for compile-time checks (like @Override). But some can be used at runtime
 by tools or frameworks using Reflection. Example: @Entity in Hibernate, @RestController in Spring Boot.
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-7) Types Of Interface :-> 
+34) Types Of Interface :-> 
 
 | Type                               | Description                                                                                                                                                   |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -566,7 +566,7 @@ class Student implements Serializable {
     String name;
 }
 ```
-Serializable is example of this.
+Serializable is example of this interface(Marker).
 
 ```
 Functional Interface :-
@@ -583,7 +583,7 @@ public class Test {
     }
 }
 ```
-some common example of this interface is: Runnable — public void run(); Callable — public V call(); Comparator — int compare(T o1, T o2);
+some common example of this interface(functional) is: Runnable — public void run(); Callable — public V call(); Comparator — int compare(T o1, T o2);
 ```
 Nested Interface
 
@@ -601,7 +601,7 @@ class Inner implements Outer.Nested {
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-8) Lambda Expression :-> only applicable in functional interface.
+35) Lambda Expression :-> only applicable in functional interface.
 ```
 regular expression.
 
