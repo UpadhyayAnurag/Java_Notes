@@ -511,4 +511,135 @@ class Dog implements Animal {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 32) Enum:-> An enum (enumeration) in Java is a special type that represents a group of named constants (fixed set of values).
+ 	Enum constants are public, static, and final by default. In Java, enum constants are themselves objects, and they are created automatically when the enum type is loaded.
+
+| Method                 | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `values()`             | Returns all enum constants as an array            |
+| `valueOf(String name)` | Converts a String to enum constant                |
+| `ordinal()`            | Returns the position (index) of the enum constant |
+
+we can use if-else and switch here. Enums implicitly extend java.lang.Enum class. Enums cannot extend other classes because Java does not support multiple inheritance for classes.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6) Annotation :-> Annotations are a form of metadata — they provide information about your code, but do not change how the code runs directly. Think of them as tags or markers you attach to classes, methods, variables, etc. to instruct the compiler or frameworks/tools to do something special.
+```
+Some annotations are only for compile-time checks (like @Override). But some can be used at runtime
+by tools or frameworks using Reflection. Example: @Entity in Hibernate, @RestController in Spring Boot.
+```
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7) Types Of Interface :-> 
+
+| Type                               | Description                                                                                                                                                   |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1️⃣ **Normal (Regular) Interface** | Has only abstract methods (Java 7 and earlier). From Java 8 onwards, can have default & static methods too.                                                   |
+| 2️⃣ **Marker Interface**           | Empty interface — has no methods or fields. Acts as a *tag* for the compiler/JVM. Example: `Serializable`, `Cloneable`.                                       |
+| 3️⃣ **Functional Interface**       | Interface with **only one abstract method** (SAM — *Single Abstract Method*). Can have default/static methods. Example: `Runnable`, `Callable`, `Comparator`. |
+| 4️⃣ **Nested Interface**           | Interface defined inside a class or another interface.                                                                                                        |
+
+```
+Normal Interface :- 
+
+interface Animal {
+    void eat();
+    void sleep();
+}
+
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eats");
+    }
+    public void sleep() {
+        System.out.println("Dog sleeps");
+    }
+}
+```
+```
+Marker Interface :-
+
+interface Serializable { } // Marker
+
+class Student implements Serializable {
+    int id;
+    String name;
+}
+```
+Serializable is example of this.
+
+```
+Functional Interface :-
+
+@FunctionalInterface
+interface MyFunctional {
+    void show();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyFunctional f = () -> System.out.println("Lambda executed!");
+        f.show();
+    }
+}
+```
+some common example of this interface is: Runnable — public void run(); Callable — public V call(); Comparator — int compare(T o1, T o2);
+```
+Nested Interface
+
+class Outer {
+    interface Nested {
+        void display();
+    }
+}
+
+class Inner implements Outer.Nested {
+    public void display() {
+        System.out.println("Nested Interface implemented");
+    }
+}
+```
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8) Lambda Expression :-> only applicable in functional interface.
+```
+regular expression.
+
+@FunctionalInterface
+interface A {
+    void show();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        A f = new A(){
+ 	    System.out.println("hello!");
+	};
+    }
+}
+```
+```
+lambda expression
+
+@FunctionalInterface
+interface A {
+    void show();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        A f = () -> System.out.println("hello!");
+    }
+}
+```
+```
+lambda with return
+
+        A obj = (String n) ->{
+            return n;
+        };
+        System.out.println(obj.show("this is a sample code !"));
+```
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
