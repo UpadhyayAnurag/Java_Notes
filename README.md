@@ -642,4 +642,121 @@ lambda with return
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+36) Exceptions in Java :->
+
+An Exception is an unexpected event that disrupts the normal flow of a program during execution. 
+
+| Type                 | Meaning                                                 | Examples                                      |
+| -------------------- | ------------------------------------------------------- | --------------------------------------------- |
+| **Error**            | Serious problems, not meant to be caught by application | `OutOfMemoryError`, `StackOverflowError`      |
+| **Exception**        | Problems that can be handled                            | `IOException`, `SQLException`                 |
+| **RuntimeException** | Unchecked exceptions that occur during runtime          | `NullPointerException`, `ArithmeticException` |
+
+| Type                    | Example                                                  | Must be handled?                                    |
+| ----------------------- | -------------------------------------------------------- | --------------------------------------------------- |
+| **Checked Exception**   | `IOException`, `SQLException`                            | ✅ Must handle at compile time (try-catch or throws) |
+| **Unchecked Exception** | `NullPointerException`, `ArrayIndexOutOfBoundsException` | ❌ Not required to handle explicitly                 |
+
+| Keyword   | Meaning                                        |
+| --------- | ---------------------------------------------- |
+| `try`     | Block of code to monitor for exceptions        |
+| `catch`   | Block to handle the exception                  |
+| `finally` | Block that always executes (clean-up code)     |
+| `throw`   | To explicitly throw an exception               |
+| `throws`  | Declares which exceptions a method might throw |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+37) try and catch :-> 
+
+try and catch demo :
+
+```
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;  // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero: " + e);
+        }
+        System.out.println("Program continues...");
+    }
+}
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+38) Exception hierarchy :-> 
+
+```
+Throwable
+├── Error
+│   ├── OutOfMemoryError
+│   ├── StackOverflowError
+│   ├── VirtualMachineError
+│   └── ...
+└── Exception
+    ├── IOException
+    │   ├── FileNotFoundException
+    ├── SQLException
+    ├── ClassNotFoundException
+    ├── RuntimeException
+    │   ├── NullPointerException
+    │   ├── ArithmeticException
+    │   ├── ArrayIndexOutOfBoundsException
+    │   ├── NumberFormatException
+    │   └── ...
+
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+39) throw & throws :->
+
+throw :- Used to explicitly throw an exception inside a method or block. You create an exception object and throw it immediately. Only one exception can be thrown at a time using throw.
+```
+class TestThrow {
+    static void checkAge(int age) {
+        if (age < 18) {
+            throw new ArithmeticException("Not eligible to vote");
+        } else {
+            System.out.println("Eligible to vote");
+        }
+    }
+
+    public static void main(String[] args) {
+        checkAge(15);  // This will throw an exception
+    }
+}
+```
+throws :- Used in a method signature to declare that the method might throw certain checked exceptions. It tells the compiler that this method is not handling the exception itself — so the caller must handle it. You can declare multiple exceptions separated by commas.
+
+```
+import java.io.*;
+
+class TestThrows {
+    void readFile() throws IOException {
+        FileReader fr = new FileReader("file.txt"); // might throw FileNotFoundException
+        fr.read(); // might throw IOException
+        fr.close();
+    }
+
+    public static void main(String[] args) {
+        TestThrows t = new TestThrows();
+        try {
+            t.readFile();  // caller must handle exception
+        } catch (IOException e) {
+            System.out.println("Exception handled: " + e);
+        }
+    }
+}
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+40) custom exception :-> 
+```
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);  // Call parent constructor
+    }
+}
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
