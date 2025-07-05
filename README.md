@@ -759,4 +759,17 @@ class InvalidAgeException extends Exception {
 }
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+41) Scanner and bufferedReader class :-> 
 
+| Feature     | `Scanner`                      | `BufferedReader`        |
+| ----------- | ------------------------------ | ----------------------- |
+| Introduced  | Java 5                         | Java 1.1                |
+| Package     | `java.util`                    | `java.io`               |
+| Reads       | Primitive types + strings      | Strings only            |
+| Parsing     | Built-in                       | Must parse manually     |
+| Reads by    | Tokens or lines                | Only lines              |
+| Performance | Slightly slower for huge data  | Faster for huge input   |
+| Common use  | User input, competitive coding | File reading, big input |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+42) finally :-> 
