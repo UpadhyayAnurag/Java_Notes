@@ -830,3 +830,297 @@ public static void main(String[] args) {
 It will print consecutive Hello and hi...
 we can set and get priority of the threads by setPriority() and getPriority()...
 
+to print in consecutive manner we can use: Threads.sleep(time in ms); method.
+
+we can also do it using runnable interface :
+```
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable is running");
+    }
+}
+
+public class TestRunnable {
+    public static void main(String[] args) {
+        MyRunnable myRunnable = new MyRunnable();
+        Thread t1 = new Thread(myRunnable);
+        t1.start();
+    }
+}
+```
+Thread Safe:-
+
+A piece of code, method, class, or data structure is called thread-safe if it behaves correctly when accessed by multiple threads at the same time, without causing: Data corruption; Unexpected results; Crashes
+
+In simple words: Thread-safe code works properly even when multiple threads use it at the same time.
+
+we can use two threads by using sncronized method , it locks one threads while while other thread is running in the system....
+
+thread state :-
+
+```
++---------+      start()     +----------+
+|  New    |  ------------->  | Runnable |
++---------+                  +----------+
+                                 |
+                           CPU picks up
+                                 ↓
+                            +---------+
+                            | Running |
+                            +---------+
+                                 |
+                      +----------------------+
+                      |                      |
+                waiting, blocked         run() ends
+                      ↓                      ↓
+             +----------------+         +------------+
+             | Waiting/Blocked| ----->  | Terminated |
+             +----------------+         +------------+
+```
+```
+Thread Lifecycle:-
+
+New: Thread created.
+Runnable: Ready to run.
+Running: Actively executing run().
+Blocked/Waiting: Paused temporarily.
+Terminated: Done forever.
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+44) Collections :->
+
+| Term           | What it is                                                | Example                                                |
+| -------------- | --------------------------------------------------------- | ------------------------------------------------------ |
+| `Collection`   | **Root interface** for all data structures (except `Map`) | `Collection<String> c = new ArrayList<>();`            |
+| Collection API | **Whole framework** (interfaces + classes + utilities)    | `List`, `Set`, `Map`, `Queue` + `ArrayList`, `HashMap` |
+| `Collections`  | **Utility class** with static methods                     | `Collections.sort(list)`                               |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+45) interface linked with the collections :->
+
+```
+java.lang.Iterable
+  └── java.util.Collection
+         ├── List
+         │     ├── ArrayList
+         │     ├── LinkedList
+         │     ├── Vector
+         │     │     └── Stack
+         ├── Set
+         │     ├── HashSet
+         │     ├── LinkedHashSet
+         │     ├── SortedSet (interface)
+         │     │     └── NavigableSet (interface)
+         │     │             └── TreeSet
+         ├── Queue
+         │     ├── LinkedList
+         │     ├── PriorityQueue
+         │     ├── Deque (interface)
+         │     │     ├── LinkedList
+         │     │     ├── ArrayDeque
+
+java.util.Map (separate hierarchy)
+  ├── HashMap
+  ├── LinkedHashMap
+  ├── SortedMap (interface)
+  │     └── NavigableMap (interface)
+  │             └── TreeMap
+  ├── Hashtable
+  │     └── Properties
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+46) ArrayList :-> ArrayList is a class in java.util that implements the List interface. If more space is needed, it creates a bigger array and copies old elements.
+```
+List<String> list = new ArrayList<>();
+```
+
+| Method                | Description                |
+| --------------------- | -------------------------- |
+| `add(E e)`            | Adds element to end        |
+| `add(int index, E e)` | Inserts at specific index  |
+| `get(int index)`      | Gets element at index      |
+| `set(int index, E e)` | Replaces element           |
+| `remove(int index)`   | Removes element by index   |
+| `remove(Object o)`    | Removes first occurrence   |
+| `clear()`             | Removes all elements       |
+| `size()`              | Returns number of elements |
+| `contains(Object o)`  | Checks if element exists   |
+| `isEmpty()`           | Checks if empty            |
+| `indexOf(Object o)`   | First index of element     |
+
+we can directly print the list or use for each loop for printing...
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+47) Set :-> Set is an interface in java.util that extends Collection. It represents a collection of unique elements — no duplicates allowed. Unlike List, a Set does not guarantee any specific order (unless you use certain implementations).
+
+```
+Set<String> names = new HashSet<>();
+```
+
+| Method               | Purpose                  |
+| -------------------- | ------------------------ |
+| `add(E e)`           | Add element              |
+| `remove(Object o)`   | Remove element           |
+| `contains(Object o)` | Check if element exists  |
+| `size()`             | Number of elements       |
+| `isEmpty()`          | Checks if empty          |
+| `clear()`            | Removes all elements     |
+| `iterator()`         | Iterate through elements |
+
+in tree set we get sorted set but in hashset we get unordered set...
+
+we can also use iterator as :
+```
+	Iterator<String> itor = list.iterator();
+        while(itor.hasNext()){
+            System.out.println(itor.next());
+        }
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+48) Map :-> Map is an interface in java.util — not a sub interface of Collection (it’s separate). It stores key-value pairs. Each key maps to one value. Keys must be unique, but values can be duplicated.
+```
+Map<Integer, String> map = new HashMap<>();
+```
+
+| Method                   | Purpose                               |
+| ------------------------ | ------------------------------------- |
+| `put(K key, V value)`    | Add/update key-value pair             |
+| `get(K key)`             | Get value by key                      |
+| `remove(K key)`          | Remove entry by key                   |
+| `containsKey(K key)`     | Check if key exists                   |
+| `containsValue(V value)` | Check if value exists                 |
+| `keySet()`               | Get all keys                          |
+| `values()`               | Get all values                        |
+| `entrySet()`             | Get all key-value pairs (`Map.Entry`) |
+| `size()`                 | Number of pairs                       |
+| `isEmpty()`              | Check if empty                        |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+49) Comparator and Comparable :-> Both are interfaces in java.lang and java.util that help Java know how to compare objects — especially for sorting. 
+
+comparable :-
+	Interface: java.lang.Comparable<T>
+	Used for: Natural ordering — defines the default way objects should be compared.
+	You make your class itself implement Comparable and define compareTo().
+	Collections.sort(list);
+
+Comparator :-
+	Interface: java.util.Comparator<T>
+	Used for: Custom ordering — define multiple different ways to compare objects, outside the class.
+	You do not change the class itself — you write separate Comparator logic.
+ 
+use of comparator:
+```
+Comparator<Student> nameComparator = new Comparator<Student>() {
+    @Override
+    public int compare(Student s1, Student s2) {
+        return s1.name.compareTo(s2.name); // sort by name
+    }
+};
+```
+in comparator 1 means swap and -1 means leave...
+example : 
+```
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+
+        list.add("hello");
+        list.add("This");
+        list.add("is");
+        list.add("a");
+        list.add("sample");
+        list.add("code");
+
+        Comparator <String> com = (o1,o2) -> o1.length() < o2.length() ? 1 : -1;
+
+        Collections.sort(list,com);
+        System.out.println(list);
+
+    }
+
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+50) Stream API :-> Part of Java 8+ (java.util.stream). A modern, functional-style way to process collections (lists, sets, arrays, etc.).
+```
+Makes it easy to:
+
+	Filter
+	Transform (map)
+	Sort
+	Aggregate (reduce)
+	Collect results
+
+```
+
+It Lets you write declarative code instead of manual loops.
+
+| Type         | Operation   | Purpose                                     |
+| ------------ | ----------- | ------------------------------------------- |
+| Intermediate | `filter()`  | Selects elements that match a condition     |
+| Intermediate | `map()`     | Transforms each element                     |
+| Intermediate | `sorted()`  | Sorts the elements                          |
+| Terminal     | `collect()` | Gathers results into `List`, `Set`, etc.    |
+| Terminal     | `forEach()` | Runs an action for each element             |
+| Terminal     | `reduce()`  | Combines elements to produce a single value |
+| Terminal     | `count()`   | Counts elements                             |
+
+we can use one stream object only once...
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+51) Optional class in java :-> when we use stream or do anything which can be null then there is chances of getting nullpointexception hence to prevent it this came in in Java 8 ...
+ It may or may not contain a non-null value.
+```
+Optional<String> name = getNameOptional();
+name.ifPresent(n -> System.out.println(n.toUpperCase()));
+```
+this will prevent from nullpointexception ...
+
+ these are the methods used in this :-
+
+| Method          | What it does                                                                       |
+| --------------- | ---------------------------------------------------------------------------------- |
+| `of()`          | Wrap a **non-null** value. Throws `NullPointerException` if value is null.         |
+| `ofNullable()`  | Wrap a **nullable** value — can hold `null`.                                       |
+| `empty()`       | Creates an empty `Optional`.                                                       |
+| `isPresent()`   | Checks if a value is present.                                                      |
+| `ifPresent()`   | Runs code if value is present.                                                     |
+| `get()`         | Returns the value — throws `NoSuchElementException` if empty (should be avoided!). |
+| `orElse()`      | Return value if present, else return default.                                      |
+| `orElseGet()`   | Same as `orElse` but takes a **Supplier**.                                         |
+| `orElseThrow()` | Throws custom exception if value is absent.                                        |
+| `map()`         | Transform the value inside if present.                                             |
+| `flatMap()`     | Similar to `map` but flattens nested `Optional`s.                                  |
+| `filter()`      | Filters the value with a condition.                                                |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+52) Method Reference :-> A Method Reference is a shorthand for a lambda expression that simply calls an existing method. It’s a cleaner, shorter way to write lambdas that just call a method.
+
+with lambda expression :
+```
+list.forEach(name -> System.out.println(name));
+```
+with Method refrence :
+```
+list.forEach(System.out::println);
+```
+Works perfectly with Streams, Lambdas, and functional interfaces (Predicate, Function, Consumer, etc)...
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+53) Constructor References :-> A Constructor Reference is a method reference that points to a class constructor, instead of a method.
+
+```
+syntax : ClassName::new
+```
+
+```
+	List<Person> people = names.stream()
+              .map(Person::new)  // calls Person(String name)    
+              .collect(Collectors.toList());
+
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+```
+				THE END! THANK YOU !
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
