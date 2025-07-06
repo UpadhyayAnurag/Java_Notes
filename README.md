@@ -806,26 +806,27 @@ some common method for threads are :-
 ```
 class MyThread extends Thread {}
 ```
-in every thread we need to have run() method....
+in every thread we need to have run() method in class and start()...
 ```
 class Mythread1 extends Thread{
-    public void run(int i){
-        System.out.println("Hello ! "+ i);
+    public void run(){
+        System.out.println("Hello ! ");
     }
 }
 class Mythread2 extends Thread{
-    public void run(int i){
-        System.out.println("Hey !"+ i);
+    public void run(){
+        System.out.println("Hey !");
     }
 }
 public static void main(String[] args) {
         Mythread1 obj = new Mythread1();
         Mythread2 obj2 = new Mythread2();
         for(int i = 1; i <= 10; i++){
-            obj.run(i);
-            obj2.run(i);
+            obj.start();
+            obj2.start();
         }
     }
 ```
 It will print consecutive Hello and hi...
+we can set and get priority of the threads by setPriority() and getPriority()...
 
