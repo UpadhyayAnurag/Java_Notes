@@ -772,4 +772,60 @@ class InvalidAgeException extends Exception {
 | Common use  | User input, competitive coding | File reading, big input |
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-42) finally :-> 
+42) finally :-> It will run whether there is exception or not...
+```
+try {
+    // code that might throw an exception
+} catch (ExceptionType e) {
+    // code to handle the exception
+} finally {
+    // code that will always run
+}
+```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+43) Threads :-> A thread is the smallest unit of execution in a program. Java supports multithreading, which means you can run multiple tasks at the same time inside a single program.
+
+Why use Threads?
+	To do multiple tasks concurrently (like downloading a file and showing a progress bar at the same time).
+	To make applications faster and more responsive.
+	To utilize multi-core CPUs efficiently.
+ we need to extend Thread class for this...
+
+some common method for threads are :-
+
+| Method      | Use                                      |
+| ----------- | ---------------------------------------- |
+| `start()`   | Starts a new thread.                     |
+| `run()`     | Code executed by thread (called by JVM). |
+| `sleep(ms)` | Pause thread for `ms` milliseconds.      |
+| `join()`    | Wait for another thread to finish.       |
+| `yield()`   | Pause to let other threads run.          |
+| `isAlive()` | Check if thread is still running.        |
+
+
+```
+class MyThread extends Thread {}
+```
+in every thread we need to have run() method....
+```
+class Mythread1 extends Thread{
+    public void run(int i){
+        System.out.println("Hello ! "+ i);
+    }
+}
+class Mythread2 extends Thread{
+    public void run(int i){
+        System.out.println("Hey !"+ i);
+    }
+}
+public static void main(String[] args) {
+        Mythread1 obj = new Mythread1();
+        Mythread2 obj2 = new Mythread2();
+        for(int i = 1; i <= 10; i++){
+            obj.run(i);
+            obj2.run(i);
+        }
+    }
+```
+It will print consecutive Hello and hi...
+
