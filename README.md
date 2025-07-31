@@ -511,7 +511,7 @@ class Dog implements Animal {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 32) Enum:-> An enum (enumeration) in Java is a special type that represents a group of named constants (fixed set of values).
- 	Enum constants are public, static, and final by default. In Java, enum constants are themselves objects, and they are created automatically when the enum type is loaded.
+ 	Enum constants are public, static, and final by default. In Java, enum constants are themselves objects, and they are created automatically when the enum type is loaded. 
 	Constructor for initializing any enum value must always be either private or default.
 
 | Method                 | Description                                       |
