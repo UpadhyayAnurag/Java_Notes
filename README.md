@@ -520,7 +520,7 @@ class Dog implements Animal {
 | `valueOf(String name)` | Converts a String to enum constant                |
 | `ordinal()`            | Returns the position (index) of the enum constant |
 
-we can use if-else and switch here. Enums implicitly extend java.lang.Enum class. Enums cannot extend other classes because Java does not support multiple inheritance for classes.
+we can use if-else and switch here. enum implicitly extend java.lang.Enum class. Enums cannot extend other classes because Java does not support multiple inheritance for classes.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
