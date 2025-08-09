@@ -658,13 +658,13 @@ An Exception is an unexpected event that disrupts the normal flow of a program d
 | **Checked Exception**   | `IOException`, `SQLException`                            | ✅ Must handle at compile time (try-catch or throws) |
 | **Unchecked Exception** | `NullPointerException`, `ArrayIndexOutOfBoundsException` | ❌ Not required to handle explicitly                 |
 
-| Keyword   | Meaning                                        |
-| --------- | ---------------------------------------------- |
-| `try`     | Block of code to monitor for exceptions        |
-| `catch`   | Block to handle the exception                  |
-| `finally` | Block that always executes (clean-up code)     |
-| `throw`   | To explicitly throw an exception               |
-| `throws`  | Declares which exceptions a method might throw |
+| Keyword   | Meaning                                                 |
+| --------- | --------------------------------------------------------|
+| `try`     | Block of code to monitor for possible exceptions        |
+| `catch`   | Block to handle the exception                           |
+| `finally` | Block that always executes (clean-up code)              |
+| `throw`   | To explicitly throw an exception                        |
+| `throws`  | Declares which exceptions a method might throw          |
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 37) try and catch :-> 
