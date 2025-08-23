@@ -395,7 +395,7 @@ It has 2 types:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-25) toString() :-> it gives output as Classname@hashcode which is equal to if we print the object we made for any class . although we can override it to print anything we want...
+25) toString() :-> it gives output as Classname@hashcode which is equal to if we print the object we made for any class . although we can override it to print anything we want....
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
