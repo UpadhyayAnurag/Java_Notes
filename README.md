@@ -480,7 +480,7 @@ class A{
     }
 }
 ```
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 31) Interface :-> It is 100% abstract by design (before Java 8) — it only contains abstract methods (method signatures without a body) and variables declared in Interfaces are public static and final by default (Constant). we cannot create a object for an interface .
 
