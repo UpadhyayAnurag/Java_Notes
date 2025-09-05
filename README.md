@@ -849,7 +849,7 @@ public class TestRunnable {
     }
 }
 ```
-Thread Safe:-
+Thread Safe :
 
 A piece of code, method, class, or data structure is called thread-safe if it behaves correctly when accessed by multiple threads at the same time, without causing: Data corruption; Unexpected results; Crashes
 
