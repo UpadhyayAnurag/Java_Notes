@@ -49,7 +49,7 @@ in java 2.5e2 means 2.5 × 10²,e2 refers to 10 power 2.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 4) type conversion :->
 smaller datatype can easily converted to bigger by the compiler. but to convert bigger to smaller we need to convert, example: int x = (int)5.6;
-here 5.6 is float but it is converted to int (5) and stress in x.
+here 5.6 is float but it is converted to int (5) and stress in x. 
 
 when you cast an int to a byte in Java, and the value is outside the byte range (-128 to 127), it behaves like a modulo operation with 256.
 
