@@ -22,7 +22,7 @@ Java is a strictly typed (or strongly typed) language. because:-Every variable a
 
 when the main method is not found in a Java program, the application cannot start its execution, resulting in a runtime error.
 
-Java is a object oriented programming.
+Java is a object oriented programming. 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2) variables:->
